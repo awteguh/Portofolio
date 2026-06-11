@@ -13,5 +13,10 @@ export const contact: Contact = {
       url: "https://github.com/awteguh",
       icon: "github",
     },
+    {
+      platform: "WhatsApp",
+      url: "https://wa.me/6282228305590",
+      icon: "whatsapp",
+    },
   ],
 }

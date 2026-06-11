@@ -27,7 +27,7 @@ export interface Project {
 export interface Social {
   platform: string
   url: string
-  icon: "mail" | "linkedin" | "github" | "globe"
+  icon: "mail" | "linkedin" | "github" | "globe" | "whatsapp"
 }
 
 export interface Personal {
