@@ -1,10 +1,14 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import { X } from "lucide-react"
 import { personal } from "@/data/personal"
 
 export function Hero() {
+  const [showOverlay, setShowOverlay] = useState(false)
+
   return (
     <section
       id="home"
@@ -23,7 +27,8 @@ export function Hero() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", duration: 0.6 }}
-          className="w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-snow/30 dark:ring-ice/30 shadow-lg"
+          className="w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-snow/30 dark:ring-ice/30 shadow-lg cursor-pointer hover:ring-ice/60 transition-all"
+          onClick={() => personal.avatarUrl && setShowOverlay(true)}
         >
           {personal.avatarUrl ? (
             <Image
@@ -42,6 +47,40 @@ export function Hero() {
             </div>
           )}
         </motion.div>
+
+      <AnimatePresence>
+        {showOverlay && personal.avatarUrl && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setShowOverlay(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.4 }}
+              className="relative max-w-[90vw] max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowOverlay(false)}
+                className="absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full bg-snow text-navy flex items-center justify-center shadow-lg hover:bg-ice transition-colors"
+              >
+                <X size={16} />
+              </button>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={personal.avatarUrl}
+                alt={personal.name}
+                className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
