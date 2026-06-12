@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { personal } from "@/data/personal"
 
 export function Hero() {
@@ -14,11 +15,24 @@ export function Hero() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", duration: 0.6 }}
-          className="w-24 h-24 mx-auto mb-6 rounded-full bg-navy dark:bg-ice flex items-center justify-center"
+          className="w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-snow/30 dark:ring-ice/30 shadow-lg"
         >
-          <span className="text-3xl font-bold text-snow dark:text-navy">
-            {personal.initials}
-          </span>
+          {personal.avatarUrl ? (
+            <Image
+              src={personal.avatarUrl}
+              alt={personal.name}
+              width={112}
+              height={112}
+              className="w-full h-full object-cover"
+              priority
+            />
+          ) : (
+            <div className="w-full h-full bg-navy dark:bg-ice flex items-center justify-center">
+              <span className="text-3xl font-bold text-snow dark:text-navy">
+                {personal.initials}
+              </span>
+            </div>
+          )}
         </motion.div>
 
         <motion.h1
