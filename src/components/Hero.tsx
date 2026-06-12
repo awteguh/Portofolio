@@ -8,8 +8,16 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-ice to-steel dark:from-navy dark:to-steel overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      <Image
+        src="/images/Background.jpg"
+        alt=""
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-navy/60 dark:bg-navy/75" />
       <div className="relative z-10 text-center px-4 pt-16">
         <motion.div
           initial={{ scale: 0 }}
