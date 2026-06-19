@@ -32,10 +32,10 @@ export function Experience() {
                   <h3 className="font-bold text-navy dark:text-ice">
                     {exp.title}
                   </h3>
-                  <p className="text-sm text-steel dark:text-steel font-medium">
+                  <p className="text-sm text-steel-ink dark:text-ice/80 font-medium">
                     {exp.company}
                   </p>
-                  <p className="text-xs text-steel/70 dark:text-snow/50 mb-2">
+                  <p className="text-xs text-steel-ink dark:text-snow/60 mb-2">
                     {exp.period}
                   </p>
                   <p className="text-sm text-navy/70 dark:text-snow/70">

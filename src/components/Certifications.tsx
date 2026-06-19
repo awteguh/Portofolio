@@ -20,10 +20,10 @@ export function Certifications() {
                 <h3 className="font-bold text-navy dark:text-snow text-sm mb-1">
                   {cert.name}
                 </h3>
-                <p className="text-xs text-steel dark:text-snow/70">
+                <p className="text-xs text-steel-ink dark:text-snow/70">
                   {cert.issuer}
                 </p>
-                <p className="text-xs text-steel dark:text-snow/60 mt-1">
+                <p className="text-xs text-steel-ink dark:text-snow/60 mt-1">
                   {cert.year}
                 </p>
               </div>

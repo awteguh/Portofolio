@@ -37,7 +37,7 @@ export function Projects() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-steel hover:text-navy dark:hover:text-ice transition-colors shrink-0"
+                      className="text-steel-ink dark:text-snow/70 hover:text-navy dark:hover:text-ice focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice rounded transition-colors shrink-0"
                       aria-label={`View ${project.title}`}
                     >
                       <ArrowUpRight

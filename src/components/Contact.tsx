@@ -55,7 +55,7 @@ export function Contact() {
           <div className="flex flex-wrap gap-4 justify-center">
             <a
               href={`mailto:${contact.email}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-ice/20 dark:bg-ice/10 text-navy dark:text-ice border border-ice/30 hover:bg-ice/40 dark:hover:bg-ice/20 transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-ice/20 dark:bg-ice/10 text-navy dark:text-ice border border-ice/30 hover:bg-ice/40 dark:hover:bg-ice/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice transition-colors"
             >
               <Mail size={18} />
               <span className="text-sm font-medium">Email</span>
@@ -69,7 +69,7 @@ export function Contact() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-ice/20 dark:bg-ice/10 text-navy dark:text-ice border border-ice/30 hover:bg-ice/40 dark:hover:bg-ice/20 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-ice/20 dark:bg-ice/10 text-navy dark:text-ice border border-ice/30 hover:bg-ice/40 dark:hover:bg-ice/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice transition-colors"
                 >
                   <Icon size={18} />
                   <span className="text-sm font-medium">{social.platform}</span>

@@ -6,9 +6,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Aw Teguh — IT Support · SOC · DevOps",
+  title: "Aminudin Teguh Wijayanto — IT Support · SOC · DevOps",
   description:
-    "Portfolio profesional Aw Teguh — IT Support, SOC Analyst, dan DevOps Engineer.",
+    "Portfolio profesional Aminudin Teguh Wijayanto (Aw Teguh) — IT Support, SOC Analyst, dan DevOps Engineer.",
 }
 
 export default function RootLayout({
@@ -19,6 +19,12 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <body className={inter.className}>
+        <a
+          href="#about"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-ice focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-navy"
+        >
+          Lewati ke konten
+        </a>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
