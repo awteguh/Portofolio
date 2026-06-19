@@ -21,7 +21,7 @@ export function Hero() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-navy/60 dark:bg-navy/75" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/20 to-navy/40 dark:from-navy/50 dark:via-navy/40 dark:to-navy/60" />
       <div className="relative z-10 text-center px-4 pt-16">
         <motion.div
           initial={{ scale: 0 }}
