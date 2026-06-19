@@ -15,7 +15,7 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <Image
-        src="/images/Background.jpg"
+        src="/images/Background1.jpg"
         alt=""
         fill
         className="object-cover"
