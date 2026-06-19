@@ -22,4 +22,11 @@ export const experience: Experience[] = [
     description:
       "Menangani troubleshooting hardware dan software, mengelola Active Directory, jaringan kantor, serta memberikan dukungan teknis kepada end-user.",
   },
+  {
+    title: "Service Area Engineer",
+    company: "Bank Jakarta, Nobu, BTN & BNI",
+    period: "2018 - 2020",
+    description:
+      "Roll out dan implementasi jaringan serta sistem untuk cabang baru perbankan. Melakukan preventive maintenance dan penggantian perangkat (PC, laptop, printer, UPS), deployment aplikasi core banking lintas platform (Windows & macOS), serta instalasi solusi keamanan endpoint enterprise (NAC Forescout, XDR Cortex, Kaseya, DLP Forcepoint, dan SASE Global) — didukung remote desktop support saat dibutuhkan.",
+  },
 ]
