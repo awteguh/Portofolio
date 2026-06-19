@@ -1,5 +1,5 @@
 import { certifications } from "@/data/certifications"
-import { ScrollReveal } from "./ScrollReveal"
+import { Stagger, StaggerItem } from "./Stagger"
 import { Section } from "./Section"
 import { SectionHeading } from "./SectionHeading"
 import { Award } from "lucide-react"
@@ -10,11 +10,11 @@ export function Certifications() {
       <div className="max-w-6xl mx-auto">
         <SectionHeading title="Certifications" align="center" />
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Stagger className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {certifications.map((cert, index) => (
-            <ScrollReveal key={index} delay={index * 0.1}>
+            <StaggerItem key={index}>
               <div className="group rounded-xl border border-steel/30 dark:border-steel/40 bg-white dark:bg-dark-card p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-ice/20 dark:bg-ice/10 text-navy dark:text-ice ring-1 ring-ice/30 mb-4">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-ice/20 dark:bg-ice/10 text-navy dark:text-ice ring-1 ring-ice/30 mb-4 transition-transform duration-300 group-hover:scale-110">
                   <Award size={22} strokeWidth={1.75} />
                 </span>
                 <h3 className="font-bold text-navy dark:text-snow text-sm mb-1">
@@ -27,9 +27,9 @@ export function Certifications() {
                   {cert.year}
                 </p>
               </div>
-            </ScrollReveal>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </Section>
   )

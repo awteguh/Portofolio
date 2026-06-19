@@ -1,5 +1,5 @@
 import { projects } from "@/data/projects"
-import { ScrollReveal } from "./ScrollReveal"
+import { Stagger, StaggerItem } from "./Stagger"
 import { Section } from "./Section"
 import { SectionHeading } from "./SectionHeading"
 import { ArrowUpRight } from "lucide-react"
@@ -13,11 +13,10 @@ export function Projects() {
           lead="Pekerjaan representatif lintas monitoring, otomasi, dan keamanan."
         />
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Stagger className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <ScrollReveal
+            <StaggerItem
               key={index}
-              delay={index * 0.1}
               className={index === 0 ? "md:col-span-2" : ""}
             >
               <article
@@ -66,9 +65,9 @@ export function Projects() {
                   ))}
                 </div>
               </article>
-            </ScrollReveal>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </Section>
   )
