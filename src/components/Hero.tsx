@@ -98,14 +98,7 @@ export function Hero() {
           {personal.tagline}
         </motion.p>
 
-        <motion.p
-          variants={item}
-          className="text-pretty text-snow/85 max-w-xl mx-auto mb-8 text-sm md:text-base leading-relaxed"
-        >
-          {personal.description}
-        </motion.p>
-
-        <motion.div variants={item} className="flex gap-4 justify-center">
+        <motion.div variants={item} className="flex gap-4 justify-center mt-8">
           {personal.resumeUrl && (
             <a
               href={personal.resumeUrl}

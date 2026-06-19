@@ -11,9 +11,6 @@ export function About() {
             About Me
           </h2>
           <div className="mt-4 h-1 w-12 rounded-full bg-ice" />
-          <p className="mt-6 text-sm font-medium text-steel-ink dark:text-ice/80">
-            {personal.tagline}
-          </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
