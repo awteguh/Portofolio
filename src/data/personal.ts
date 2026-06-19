@@ -1,7 +1,8 @@
 import type { Personal } from "./types"
 
 export const personal: Personal = {
-  name: "Aw Teguh",
+  name: "Aminudin Teguh Wijayanto",
+  nickname: "Aw Teguh",
   initials: "AT",
   tagline: "IT Support · SOC Analyst · DevOps Engineer",
   description:

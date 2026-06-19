@@ -86,10 +86,19 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold text-snow mb-3"
+          className="text-4xl md:text-5xl font-bold text-snow mb-2"
         >
           {personal.name}
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.28, duration: 0.5 }}
+          className="text-base md:text-lg text-ice/80 mb-3"
+        >
+          ({personal.nickname})
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

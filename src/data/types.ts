@@ -32,6 +32,7 @@ export interface Social {
 
 export interface Personal {
   name: string
+  nickname: string
   initials: string
   tagline: string
   description: string
