@@ -3,7 +3,7 @@ import type { Skill } from "./types"
 export const skills: Skill[] = [
   {
     category: "IT Support",
-    icon: "🛡️",
+    icon: "headset",
     items: [
       "Windows Server",
       "Active Directory",
@@ -15,7 +15,7 @@ export const skills: Skill[] = [
   },
   {
     category: "SOC Analyst",
-    icon: "🔒",
+    icon: "shield-check",
     items: [
       "SIEM (Splunk / Wazuh)",
       "Incident Response",
@@ -27,7 +27,7 @@ export const skills: Skill[] = [
   },
   {
     category: "DevOps",
-    icon: "⚙️",
+    icon: "server-cog",
     items: [
       "Docker & Kubernetes",
       "CI/CD (Jenkins / GitHub Actions)",

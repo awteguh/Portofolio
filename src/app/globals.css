@@ -7,8 +7,10 @@
   --color-steel: #6D8196;
   --color-ice: #ADD8E6;
   --color-snow: #FFFAFA;
+  --color-mist: #eaf0f4;
   --color-dark-bg: #0a0a2e;
-  --color-dark-card: rgba(109, 129, 150, 0.15);
+  --color-dark-surface: #0f1338;
+  --color-dark-card: #1a2247;
 }
 
 html {

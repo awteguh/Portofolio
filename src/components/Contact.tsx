@@ -1,5 +1,6 @@
 import { contact } from "@/data/contact"
 import { ScrollReveal } from "./ScrollReveal"
+import { Section } from "./Section"
 import { Mail, Globe } from "lucide-react"
 import type { Social } from "@/data/types"
 
@@ -37,12 +38,13 @@ const iconMap: Record<Social["icon"], React.ComponentType<{ size?: number }>> = 
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 px-4">
+    <Section id="contact" alt>
       <div className="max-w-2xl mx-auto text-center">
         <ScrollReveal>
-          <h2 className="text-2xl font-bold text-navy dark:text-ice mb-4">
+          <h2 className="text-balance text-3xl md:text-4xl font-bold tracking-tight text-navy dark:text-snow mb-4">
             Get In Touch
           </h2>
+          <div className="mx-auto mb-6 h-1 w-12 rounded-full bg-ice" />
           <p className="text-navy/70 dark:text-snow/70 mb-8">
             Tertarik untuk bekerja sama atau sekadar ingin menyapa? Jangan ragu
             untuk menghubungi saya.
@@ -77,6 +79,6 @@ export function Contact() {
           </div>
         </ScrollReveal>
       </div>
-    </section>
+    </Section>
   )
 }

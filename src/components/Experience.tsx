@@ -1,17 +1,15 @@
 import { experience } from "@/data/experience"
 import { ScrollReveal } from "./ScrollReveal"
+import { Section } from "./Section"
+import { SectionHeading } from "./SectionHeading"
 
 export function Experience() {
   return (
-    <section id="experience" className="py-20 px-4">
+    <Section id="experience">
       <div className="max-w-4xl mx-auto">
-        <ScrollReveal>
-          <h2 className="text-2xl font-bold text-navy dark:text-ice mb-10 text-center">
-            Experience
-          </h2>
-        </ScrollReveal>
+        <SectionHeading title="Experience" align="center" />
 
-        <div className="relative">
+        <div className="relative mt-12">
           <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-ice/40 dark:bg-ice/20" />
 
           {experience.map((exp, index) => (
@@ -49,6 +47,6 @@ export function Experience() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -1,23 +1,36 @@
 import { projects } from "@/data/projects"
 import { ScrollReveal } from "./ScrollReveal"
-import { ExternalLink } from "lucide-react"
+import { Section } from "./Section"
+import { SectionHeading } from "./SectionHeading"
+import { ArrowUpRight } from "lucide-react"
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 px-4">
+    <Section id="projects">
       <div className="max-w-6xl mx-auto">
-        <ScrollReveal>
-          <h2 className="text-2xl font-bold text-navy dark:text-ice mb-10 text-center">
-            Projects
-          </h2>
-        </ScrollReveal>
+        <SectionHeading
+          title="Projects"
+          lead="Pekerjaan representatif lintas monitoring, otomasi, dan keamanan."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <ScrollReveal key={index} delay={index * 0.1}>
-              <div className="rounded-xl border border-steel/30 dark:border-steel/40 bg-white dark:bg-dark-card p-6 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="font-bold text-navy dark:text-ice">
+            <ScrollReveal
+              key={index}
+              delay={index * 0.1}
+              className={index === 0 ? "md:col-span-2" : ""}
+            >
+              <article
+                className={`group relative rounded-xl border border-steel/30 dark:border-steel/40 bg-white dark:bg-dark-card p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full flex flex-col ${
+                  index === 0 ? "md:p-8" : ""
+                }`}
+              >
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h3
+                    className={`font-bold text-navy dark:text-snow ${
+                      index === 0 ? "text-xl md:text-2xl" : "text-lg"
+                    }`}
+                  >
                     {project.title}
                   </h3>
                   {project.url && (
@@ -25,31 +38,38 @@ export function Projects() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-steel hover:text-ice transition-colors shrink-0 ml-2"
+                      className="text-steel hover:text-navy dark:hover:text-ice transition-colors shrink-0"
                       aria-label={`View ${project.title}`}
                     >
-                      <ExternalLink size={18} />
+                      <ArrowUpRight
+                        size={20}
+                        className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
                     </a>
                   )}
                 </div>
-                <p className="text-sm text-navy/70 dark:text-snow/70 mb-4 flex-1">
+                <p
+                  className={`text-navy/70 dark:text-snow/70 mb-5 flex-1 ${
+                    index === 0 ? "text-base max-w-2xl" : "text-sm"
+                  }`}
+                >
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2.5 py-0.5 rounded-full bg-navy/10 dark:bg-ice/10 text-navy dark:text-ice"
+                      className="text-xs px-2.5 py-1 rounded-full bg-navy/10 dark:bg-ice/10 text-navy dark:text-ice"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-              </div>
+              </article>
             </ScrollReveal>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
