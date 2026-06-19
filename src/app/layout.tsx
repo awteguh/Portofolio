@@ -5,10 +5,25 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
+const title = "Aminudin Teguh Wijayanto — IT Support · SOC · DevOps"
+const description =
+  "Portfolio profesional Aminudin Teguh Wijayanto (Aw Teguh) — IT Support, SOC Analyst, dan DevOps Engineer."
+
 export const metadata: Metadata = {
-  title: "Aminudin Teguh Wijayanto — IT Support · SOC · DevOps",
-  description:
-    "Portfolio profesional Aminudin Teguh Wijayanto (Aw Teguh) — IT Support, SOC Analyst, dan DevOps Engineer.",
+  metadataBase: new URL("https://awteguh.vercel.app"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    locale: "id_ID",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 }
 
 export default function RootLayout({
