@@ -3,30 +3,30 @@ import type { Experience } from "./types"
 export const experience: Experience[] = [
   {
     title: "DevOps Engineer",
-    company: "PT Teknologi Nusantara",
-    period: "2024 - Sekarang",
+    company: "PT Bharata Internasional Parmaceutical",
+    period: "2026 - Sekarang",
     description:
-      "Mengelola infrastruktur cloud, membangun CI/CD pipeline dengan GitHub Actions dan Jenkins, serta mengimplementasikan container orchestration menggunakan Docker dan Kubernetes.",
+      "Mengelola infrastruktur cloud, deployment aplikasi, dan otomasi proses menggunakan Docker, Linux, serta solusi monitoring untuk memastikan ketersediaan dan performa layanan yang optimal.",
   },
   {
     title: "SOC Analyst",
-    company: "PT Keamanan Siber Indonesia",
-    period: "2022 - 2024",
+    company: "Projek Pribadi",
+    period: "2026 - Sekarang",
     description:
       "Monitoring keamanan jaringan menggunakan SIEM, melakukan incident response, threat hunting, dan vulnerability assessment untuk klien enterprise.",
   },
   {
     title: "IT Support Specialist",
-    company: "CV Solusi Digital",
-    period: "2020 - 2022",
+    company: "PT Bharata Internasional Parmaceutical",
+    period: "2026 - Sekarang",
     description:
-      "Menangani troubleshooting hardware dan software, mengelola Active Directory, jaringan kantor, serta memberikan dukungan teknis kepada end-user.",
+      "Mengelola dan memelihara infrastruktur jaringan (LAN, WAN, VPN, Wi-Fi) termasuk konfigurasi switch, router, dan access point. Memantau performa jaringan, troubleshooting konektivitas, serta memastikan keamanan melalui firewall dan perangkat security. Memberikan dukungan teknis kepada pengguna internal dan menyusun dokumentasi jaringan serta diagram topologi.",
   },
   {
     title: "Service Area Engineer",
-    company: "Bank Jakarta, Nobu, BTN & BNI",
+    company: "PT Visionet Data Internasional(Bank Jakarta, Bank BTN)",
     period: "2018 - 2020",
     description:
-      "Roll out dan implementasi jaringan serta sistem untuk cabang baru perbankan. Melakukan preventive maintenance dan penggantian perangkat (PC, laptop, printer, UPS), deployment aplikasi core banking lintas platform (Windows & macOS), serta instalasi solusi keamanan endpoint enterprise (NAC Forescout, XDR Cortex, Kaseya, DLP Forcepoint, dan SASE Global) — didukung remote desktop support saat dibutuhkan.",
+      "Roll out dan implementasi standarisasi device endpoint, MAC, Notebook dan PC. Melakukan preventive maintenance dan penggantian perangkat (PC, laptop, printer, UPS), deployment aplikasi core banking lintas platform (Windows & macOS), serta instalasi solusi keamanan endpoint enterprise (NAC Forescout, XDR Cortex, Kaseya, DLP Forcepoint, dan SASE Global) — didukung remote desktop support saat dibutuhkan.",
   },
 ]

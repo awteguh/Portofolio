@@ -17,7 +17,7 @@ export const skills: Skill[] = [
     category: "SOC Analyst",
     icon: "shield-check",
     items: [
-      "SIEM (Splunk / Wazuh)",
+      "SIEM (Wazuh)",
       "Incident Response",
       "Threat Analysis",
       "Log Monitoring",
@@ -29,12 +29,14 @@ export const skills: Skill[] = [
     category: "DevOps",
     icon: "server-cog",
     items: [
-      "Docker & Kubernetes",
-      "CI/CD (Jenkins / GitHub Actions)",
+      //"Docker & Kubernetes",
+      "Docker",
+      //"CI/CD (Jenkins / GitHub Actions)",
       "Linux Administration",
-      "Cloud (AWS / GCP)",
-      "Terraform / Ansible",
-      "Monitoring (Grafana / Prometheus)",
+      "Cloud (GCP)",
+      //"Terraform / Ansible",
+      //"Monitoring (Grafana / Prometheus)",
+      "Monitoring (Beszel)",
     ],
   },
 ]
