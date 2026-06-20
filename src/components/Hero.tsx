@@ -58,10 +58,13 @@ function RoleCycler({ reduce }: { reduce: boolean }) {
   }, [tick, phase, reduce, current])
 
   return (
-    <span className="text-ice font-semibold">
+    <span
+      className="font-[family-name:var(--font-mono)] font-bold text-online"
+      style={{ textShadow: "0 0 12px rgba(57,255,138,0.7), 0 0 24px rgba(57,255,138,0.35)" }}
+    >
       {displayed}
       {!reduce && (
-        <span className="inline-block w-0.5 h-5 ml-0.5 align-middle bg-ice animate-pulse" />
+        <span className="inline-block w-0.5 h-5 ml-0.5 align-middle bg-online animate-pulse" />
       )}
     </span>
   )
