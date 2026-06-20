@@ -57,7 +57,7 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <a
           href="#home"
-          className={`text-xl font-bold tracking-tight transition-colors rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice ${
+          className={`font-[family-name:var(--font-mono)] text-xl font-bold tracking-tight transition-colors rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice ${
             scrolled ? "text-navy dark:text-ice" : "text-snow"
           }`}
         >
