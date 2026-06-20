@@ -88,8 +88,10 @@ export function Hero() {
     >
       {/* Particle network — full canvas, no photo bg competing */}
       <NetworkCanvas />
-      {/* Subtle radial vignette to anchor content */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_50%,transparent_40%,#0a0a2e_100%)]" />
+      {/* Vignette — darkens edges so canvas is vivid at center, text stays readable */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,transparent_30%,#0a0a2e_90%)]" />
+      {/* Bottom fade — smooth transition into next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-bg to-transparent" />
 
       {/* Content — 2 column on md+, stacked on mobile */}
       <motion.div
