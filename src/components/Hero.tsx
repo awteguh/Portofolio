@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react"
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion"
 import Image from "next/image"
-import { X, ArrowDown } from "lucide-react"
+import { X } from "lucide-react"
 import { personal } from "@/data/personal"
 
 const EASE = [0.16, 1, 0.3, 1] as const
@@ -184,15 +184,49 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll cue */}
+      {/* Scroll cue — three cascading chevrons */}
       <motion.a
         href="#about"
         aria-label="Scroll ke bawah"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-snow/60 hover:text-snow transition-colors"
-        animate={reduce ? undefined : { y: [0, 8, 0] }}
-        transition={reduce ? undefined : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-0.5 group"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
       >
-        <ArrowDown size={24} />
+        {[0, 1, 2].map((i) => (
+          <motion.span
+            key={i}
+            className="block text-snow/40 group-hover:text-ice transition-colors duration-300"
+            animate={
+              reduce
+                ? undefined
+                : { opacity: [0.2, 1, 0.2], y: [0, 5, 0] }
+            }
+            transition={
+              reduce
+                ? undefined
+                : {
+                    duration: 1.4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.18,
+                  }
+            }
+          >
+            <svg
+              width="22"
+              height="13"
+              viewBox="0 0 22 13"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="1 1 11 11 21 1" />
+            </svg>
+          </motion.span>
+        ))}
       </motion.a>
 
       {/* Photo overlay */}
