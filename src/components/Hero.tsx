@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion"
 import Image from "next/image"
 import { X, ArrowDown } from "lucide-react"
@@ -8,11 +8,68 @@ import { personal } from "@/data/personal"
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
+const ROLES = ["IT Support", "SOC Analyst", "DevOps Engineer"]
+
+/** Animated cycling role text — types in, pauses, fades out, next. */
+function RoleCycler({ reduce }: { reduce: boolean }) {
+  const [index, setIndex] = useState(0)
+  const [displayed, setDisplayed] = useState("")
+  const [phase, setPhase] = useState<"typing" | "pause" | "erasing">("typing")
+
+  const current = ROLES[index]
+
+  const tick = useCallback(() => {
+    if (reduce) {
+      // Reduced motion: just swap instantly, no typewriter
+      setDisplayed(current)
+      return
+    }
+
+    if (phase === "typing") {
+      if (displayed.length < current.length) {
+        setDisplayed(current.slice(0, displayed.length + 1))
+      } else {
+        setPhase("pause")
+      }
+    } else if (phase === "pause") {
+      setPhase("erasing")
+    } else {
+      if (displayed.length > 0) {
+        setDisplayed(displayed.slice(0, -1))
+      } else {
+        setIndex((i) => (i + 1) % ROLES.length)
+        setPhase("typing")
+      }
+    }
+  }, [reduce, phase, displayed, current])
+
+  useEffect(() => {
+    if (reduce) {
+      setDisplayed(current)
+      return
+    }
+    const delay =
+      phase === "typing" ? 60
+      : phase === "pause" ? 1800
+      : 40
+    const t = setTimeout(tick, delay)
+    return () => clearTimeout(t)
+  }, [tick, phase, reduce, current])
+
+  return (
+    <span className="text-ice font-semibold">
+      {displayed}
+      {!reduce && (
+        <span className="inline-block w-0.5 h-5 ml-0.5 align-middle bg-ice animate-pulse" />
+      )}
+    </span>
+  )
+}
+
 export function Hero() {
   const [showOverlay, setShowOverlay] = useState(false)
-  const reduce = useReducedMotion()
+  const reduce = useReducedMotion() ?? false
 
-  // Close the photo overlay with Escape.
   useEffect(() => {
     if (!showOverlay) return
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setShowOverlay(false)
@@ -20,15 +77,12 @@ export function Hero() {
     return () => window.removeEventListener("keydown", onKey)
   }, [showOverlay])
 
-  // Container orchestrates a gentle stagger; items rise into place. When the
-  // user prefers reduced motion, the variants are left unused (initial/animate
-  // are disabled below) so everything renders at rest immediately.
   const container: Variants = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+    show: { transition: { staggerChildren: 0.13, delayChildren: 0.1 } },
   }
   const item: Variants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 28 },
     show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
   }
 
@@ -52,19 +106,20 @@ export function Hero() {
         initial={reduce ? false : "hidden"}
         animate={reduce ? false : "show"}
       >
+        {/* Photo */}
         <motion.button
           type="button"
           variants={item}
           onClick={() => personal.avatarUrl && setShowOverlay(true)}
           aria-label="Lihat foto profil ukuran penuh"
-          className="group block w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-snow/30 dark:ring-ice/30 shadow-lg cursor-pointer hover:ring-ice/60 focus-visible:ring-ice transition-all"
+          className="group block w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-snow/30 dark:ring-ice/30 shadow-xl cursor-pointer hover:ring-ice/70 focus-visible:ring-ice transition-all duration-300"
         >
           {personal.avatarUrl ? (
             <Image
               src={personal.avatarUrl}
               alt={personal.name}
-              width={112}
-              height={112}
+              width={128}
+              height={128}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               priority
             />
@@ -77,28 +132,41 @@ export function Hero() {
           )}
         </motion.button>
 
+        {/* Hi! */}
+        <motion.p
+          variants={item}
+          className="text-snow/80 text-lg md:text-xl mb-1 tracking-wide"
+        >
+          Hi! 👋
+        </motion.p>
+
+        {/* Full name */}
         <motion.h1
           variants={item}
           className="text-balance text-4xl md:text-5xl font-bold tracking-tight text-snow mb-2"
         >
-          {personal.name}
+          I&apos;m {personal.name}
         </motion.h1>
 
+        {/* Nickname */}
         <motion.p
           variants={item}
-          className="text-base md:text-lg text-ice/80 mb-3"
+          className="text-base md:text-lg text-snow/60 mb-6"
         >
           ({personal.nickname})
         </motion.p>
 
+        {/* Cycling role */}
         <motion.p
           variants={item}
-          className="text-lg md:text-xl text-ice dark:text-ice/90 mb-4"
+          className="text-base md:text-lg text-snow/80 mb-8 h-7"
         >
-          {personal.tagline}
+          I&apos;m into{" "}
+          <RoleCycler reduce={reduce} />
         </motion.p>
 
-        <motion.div variants={item} className="flex gap-4 justify-center mt-8">
+        {/* CTAs */}
+        <motion.div variants={item} className="flex gap-4 justify-center">
           {personal.resumeUrl && (
             <a
               href={personal.resumeUrl}
@@ -120,15 +188,14 @@ export function Hero() {
       <motion.a
         href="#about"
         aria-label="Scroll ke bawah"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-snow/70 hover:text-snow transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-snow/60 hover:text-snow transition-colors"
         animate={reduce ? undefined : { y: [0, 8, 0] }}
-        transition={
-          reduce ? undefined : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
-        }
+        transition={reduce ? undefined : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
       >
         <ArrowDown size={24} />
       </motion.a>
 
+      {/* Photo overlay */}
       <AnimatePresence>
         {showOverlay && personal.avatarUrl && (
           <motion.div
