@@ -10,10 +10,10 @@ export const experience: Experience[] = [
   },
   {
     title: "SOC Analyst",
-    company: "Projek Pribadi",
+    company: "Projek Pribadi SOC Analyst Lab – Wazuh SIEM Implementation",
     period: "2026 - Sekarang",
     description:
-      "Monitoring keamanan jaringan menggunakan SIEM, melakukan incident response, threat hunting, dan vulnerability assessment untuk klien enterprise.",
+      "Monitoring keamanan jaringan menggunakan SIEM Wazuh, melakukan incident response, threat hunting, dan vulnerability assessment untuk endpoint",
   },
   {
     title: "IT Support Specialist",
@@ -25,7 +25,7 @@ export const experience: Experience[] = [
   {
     title: "Service Area Engineer",
     company: "PT Visionet Data Internasional(Bank Jakarta, Bank BTN)",
-    period: "2018 - 2020",
+    period: "2025 - 2026",
     description:
       "Roll out dan implementasi standarisasi device endpoint, MAC, Notebook dan PC. Melakukan preventive maintenance dan penggantian perangkat (PC, laptop, printer, UPS), deployment aplikasi core banking lintas platform (Windows & macOS), serta instalasi solusi keamanan endpoint enterprise (NAC Forescout, XDR Cortex, Kaseya, DLP Forcepoint, dan SASE Global) — didukung remote desktop support saat dibutuhkan.",
   },

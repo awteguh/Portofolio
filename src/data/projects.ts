@@ -18,8 +18,8 @@ export const projects: Project[] = [
   {
     title: "SIEM Integration",
     description:
-      "Integrasi Wazuh SIEM dengan berbagai log source untuk centralized security monitoring dan automated alerting.",
-    tags: ["Wazuh", "ELK Stack", "Python", "Security"],
+      "Menerapkan sistem SIEM menggunakan Wazuh untuk memantau endpoint, mendeteksi ancaman keamanan, dan menganalisis log secara real-time.",
+    tags: ["Wazuh", "Security"],
   },
   {
     title: "Infrastructure as Code",

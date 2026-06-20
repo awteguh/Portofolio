@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer
 import Image from "next/image"
 import { X } from "lucide-react"
 import { personal } from "@/data/personal"
+import { NetworkCanvas } from "./NetworkCanvas"
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
@@ -99,6 +100,7 @@ export function Hero() {
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/20 to-navy/40 dark:from-navy/50 dark:via-navy/40 dark:to-navy/60" />
+      <NetworkCanvas />
 
       <motion.div
         className="relative z-10 text-center px-4 pt-16"

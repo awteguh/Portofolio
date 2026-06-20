@@ -4,6 +4,7 @@
 
 @theme {
   --font-mono: "JetBrains Mono", monospace;
+
   --color-navy: #000080;
   --color-steel: #6D8196;
   --color-steel-ink: #516374;
@@ -13,6 +14,10 @@
   --color-dark-bg: #0a0a2e;
   --color-dark-surface: #0f1338;
   --color-dark-card: #1a2247;
+
+  /* Overdrive tokens */
+  --color-threat: #ff5050;
+  --color-online: #39ff8a;
 }
 
 html {
@@ -31,12 +36,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

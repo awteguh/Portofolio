@@ -2,6 +2,8 @@ import { personal } from "@/data/personal"
 import { ScrollReveal } from "./ScrollReveal"
 import { Stagger, StaggerItem } from "./Stagger"
 import { Section } from "./Section"
+import { SectionHeading } from "./SectionHeading"
+import { ScanCard } from "./ScanCard"
 import { Headset, ShieldCheck, ServerCog } from "lucide-react"
 
 const focusAreas = [
@@ -31,17 +33,12 @@ export function About() {
 
         {/* Left — heading + focus cards */}
         <div>
-          <ScrollReveal>
-            <h2 className="text-balance text-3xl md:text-4xl font-bold tracking-tight text-navy dark:text-snow">
-              About Me
-            </h2>
-            <div className="mt-4 h-1 w-12 rounded-full bg-ice" />
-          </ScrollReveal>
+          <SectionHeading title="About Me" tag="PROFILE" />
 
           <Stagger className="mt-8 flex flex-col gap-3">
             {focusAreas.map(({ icon: Icon, label, desc }) => (
               <StaggerItem key={label}>
-                <div className="flex items-start gap-3 rounded-xl border border-steel/25 dark:border-steel/30 bg-white dark:bg-dark-card px-4 py-3 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <ScanCard className="flex items-start gap-3 px-4 py-3">
                   <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ice/20 dark:bg-ice/10 text-navy dark:text-ice ring-1 ring-ice/30">
                     <Icon size={16} strokeWidth={1.75} />
                   </span>
@@ -49,7 +46,7 @@ export function About() {
                     <p className="text-sm font-semibold text-navy dark:text-snow">{label}</p>
                     <p className="text-xs text-steel-ink dark:text-snow/60 mt-0.5">{desc}</p>
                   </div>
-                </div>
+                </ScanCard>
               </StaggerItem>
             ))}
           </Stagger>

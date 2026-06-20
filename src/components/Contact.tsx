@@ -41,10 +41,14 @@ export function Contact() {
     <Section id="contact" alt>
       <div className="max-w-2xl mx-auto text-center">
         <ScrollReveal>
+          <p className="font-[family-name:var(--font-mono)] text-xs text-online/80 tracking-widest mb-3 flex items-center justify-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-online animate-pulse" />
+            [OPEN.TO.CONNECT]
+          </p>
           <h2 className="text-balance text-3xl md:text-4xl font-bold tracking-tight text-navy dark:text-snow mb-4">
             Get In Touch
           </h2>
-          <div className="mx-auto mb-6 h-1 w-12 rounded-full bg-ice" />
+          <div className="mx-auto mb-6 h-0.5 w-12 bg-ice" />
           <p className="text-navy/70 dark:text-snow/70 mb-8">
             Tertarik untuk bekerja sama atau sekadar ingin menyapa? Jangan ragu
             untuk menghubungi saya.
