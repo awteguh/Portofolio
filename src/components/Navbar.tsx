@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import { ThemeToggle } from "./ThemeToggle"
 import { personal } from "@/data/personal"
 
 const navLinks = [
@@ -50,7 +49,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-snow/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-md"
+          ? "bg-dark-bg/90 backdrop-blur-md shadow-md border-b border-ice/10"
           : "bg-transparent"
       }`}
     >
@@ -87,13 +86,9 @@ export function Navbar() {
               </a>
             )
           })}
-          <div className="ml-2">
-            <ThemeToggle />
-          </div>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
@@ -110,7 +105,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-snow dark:bg-dark-bg border-t border-ice/20 px-4 pb-4">
+        <div className="md:hidden bg-dark-bg border-t border-ice/20 px-4 pb-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
