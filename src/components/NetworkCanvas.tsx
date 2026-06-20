@@ -186,20 +186,26 @@ export function NetworkCanvas() {
       }
     }
 
+    // Listen on window — canvas is behind z-10 content so canvas events
+    // are blocked. Window-level listener always fires regardless of z-order.
     const onMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
-      mouse.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      // Only register if cursor is within the canvas bounds
+      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+        mouse.current = { x, y }
+      } else {
+        mouse.current = { x: -9999, y: -9999 }
+      }
     }
-    const onLeave = () => { mouse.current = { x: -9999, y: -9999 } }
 
-    canvas.addEventListener("mousemove", onMove)
-    canvas.addEventListener("mouseleave", onLeave)
+    window.addEventListener("mousemove", onMove)
 
     return () => {
       cancelAnimationFrame(raf)
       ro.disconnect()
-      canvas.removeEventListener("mousemove", onMove)
-      canvas.removeEventListener("mouseleave", onLeave)
+      window.removeEventListener("mousemove", onMove)
     }
   }, [reduce])
 
