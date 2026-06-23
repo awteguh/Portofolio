@@ -15,6 +15,8 @@ export interface Certification {
   name: string
   issuer: string
   year: string
+  image: string   // path relative to /public, e.g. /images/certs/xxx.jpg
+  pdfUrl?: string // path to original PDF for download
 }
 
 export interface Project {
