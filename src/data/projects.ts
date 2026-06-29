@@ -11,8 +11,8 @@ export const projects: Project[] = [
   {
     title: "CI/CD Pipeline Automation",
     description:
-      "Membangun pipeline otomatis untuk build, test, dan deployment menggunakan GitHub Actions dengan multi-environment support.",
-    tags: ["GitHub Actions", "Docker", "Node.js", "AWS"],
+      "Membangun dan mengimplementasikan pipeline CI/CD otomatis menggunakan Harness AI — mencakup build, test, dan deployment dengan AI-assisted pipeline intelligence untuk deteksi failure dan optimasi otomatis. Didukung GitHub Actions sebagai trigger dengan multi-environment support (dev, staging, production).",
+    tags: ["Harness AI", "GitHub Actions", "Docker", "CI/CD"],
     url: "https://github.com/awteguh/cicd-pipeline",
   },
   {
