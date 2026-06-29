@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background: dark navy -->
+  <rect width="32" height="32" rx="6" fill="#0a0a2e"/>
+  <!-- Subtle border -->
+  <rect width="32" height="32" rx="6" fill="none" stroke="#ADD8E6" stroke-width="1" opacity="0.3"/>
+  <!-- >_ in JetBrains Mono style, green glow -->
+  <text
+    x="5" y="22"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="13"
+    font-weight="700"
+    fill="#39ff8a"
+    letter-spacing="-0.5"
+  >&gt;_</text>
+</svg>

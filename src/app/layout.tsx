@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://awteguh.vercel.app"),
   title,
   description,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+  },
   openGraph: {
     title,
     description,
