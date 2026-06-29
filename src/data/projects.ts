@@ -23,8 +23,7 @@ export const projects: Project[] = [
   {
     title: "Infrastructure as Code",
     description:
-      "Provisioning infrastruktur cloud AWS menggunakan Terraform dengan modular architecture dan state management.",
-    tags: ["Terraform", "AWS", "Ansible", "Linux"],
-    url: "https://github.com/awteguh/iac-terraform",
+      "Mengelola infrastruktur jaringan perusahaan menggunakan kombinasi Mikrotik dan Ruijie (AP) sebagai backbone konektivitas. Server berbasis Windows Server dengan virtualisasi menggunakan Hyper-V — mengelola VM untuk environment Dev, Production, dan Network Monitoring (Netmon).",
+    tags: ["Mikrotik", "Ruijie", "Windows Server", "Hyper-V"],
   },
 ]
