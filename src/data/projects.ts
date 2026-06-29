@@ -4,15 +4,14 @@ export const projects: Project[] = [
   {
     title: "Monitoring Dashboard",
     description:
-      "Setup stack monitoring menggunakan Grafana dan Prometheus untuk memantau performa server dan aplikasi secara real-time.",
-    tags: ["Grafana", "Prometheus", "Docker", "Linux"],
-    url: "https://github.com/awteguh/monitoring-dashboard",
+      "Setup sistem monitoring infrastruktur menggunakan Beszel dan Zabbix untuk memantau performa server, resource usage, dan ketersediaan layanan secara real-time di lingkungan perusahaan.",
+    tags: ["Beszel", "Zabbix", "Docker", "Linux"],
   },
   {
     title: "CI/CD Pipeline Automation",
     description:
-      "Membangun dan mengimplementasikan pipeline CI/CD otomatis menggunakan Harness AI — mencakup build, test, dan deployment dengan AI-assisted pipeline intelligence untuk deteksi failure dan optimasi otomatis. Didukung GitHub Actions sebagai trigger dengan multi-environment support (dev, staging, production).",
-    tags: ["Harness AI", "GitHub Actions", "Docker", "CI/CD"],
+      "Membangun dan mengimplementasikan pipeline CI/CD otomatis menggunakan Harness AI — mencakup build, test, dan deployment dengan AI-assisted pipeline intelligence untuk deteksi failure dan optimasi otomatis. Trigger menggunakan webhook dan pipeline berjalan di environment dev.",
+    tags: ["Harness AI", "Webhook", "Docker", "CI/CD"],
     url: "https://github.com/awteguh/cicd-pipeline",
   },
   {
