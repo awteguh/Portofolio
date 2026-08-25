@@ -2,6 +2,27 @@ import type { Certification } from "./types"
 
 export const certifications: Certification[] = [
   {
+    name: "Cybersecurity Operations Fundamentals",
+    issuer: "Cisco / Coursera",
+    year: "2026",
+    image: "/images/certs/coursera-cyberops-fundamentals.jpg",
+    pdfUrl: "/images/Coursera 5HE65N5LX886.pdf",
+  },
+  {
+    name: "Threat Response",
+    issuer: "Cisco / Coursera",
+    year: "2026",
+    image: "/images/certs/coursera-threat-response.jpg",
+    pdfUrl: "/images/Coursera 03OHC15V62V2.pdf",
+  },
+  {
+    name: "Endpoints and Systems",
+    issuer: "Cisco / Coursera",
+    year: "2026",
+    image: "/images/certs/coursera-endpoints-systems.jpg",
+    pdfUrl: "/images/Coursera OZZSUFR1NQUG.pdf",
+  },
+  {
     name: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
     year: "2026",
@@ -35,20 +56,6 @@ export const certifications: Certification[] = [
     year: "2024",
     image: "/images/certs/devops-dumbways.jpg",
     pdfUrl: "/images/devops dumbways.pdf",
-  },
-  {
-    name: "CompTIA Network+",
-    issuer: "Udemy",
-    year: "2024",
-    image: "/images/certs/udemy-compia-network.jpg",
-    pdfUrl: "/images/udemy  compia network+.pdf",
-  },
-  {
-    name: "Cyber Security",
-    issuer: "Udemy",
-    year: "2024",
-    image: "/images/certs/udemy-cyber-sec.jpg",
-    pdfUrl: "/images/udemy cyber sec.pdf",
   },
   {
     name: "Networking Basics",
