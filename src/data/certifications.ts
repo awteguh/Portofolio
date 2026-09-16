@@ -2,6 +2,13 @@ import type { Certification } from "./types"
 
 export const certifications: Certification[] = [
   {
+    name: "Enterprise Cyber Academy Bootcamp Batch #01",
+    issuer: "Punggawa Cybersecurity",
+    year: "2026",
+    image: "/images/certs/bootcamp-punggawa-cyber.jpg",
+    pdfUrl: "/images/Sertifikat Bootcamp_Aminudin Teguh Wijayanto.pdf",
+  },
+  {
     name: "Cybersecurity Operations Fundamentals",
     issuer: "Cisco / Coursera",
     year: "2026",
